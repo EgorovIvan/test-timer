@@ -1,26 +1,39 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  import Timer from './components/TimerCompoment.vue'
+  import AddButton from './components/AddButton.vue'
+  
+  export default {
+    name: 'App',
+    components: {
+      Timer,
+      AddButton
+    },
+    data() {
+      return {
+        count: 0,
+      }
+    },
+    methods: {
+      addTimer() {
+        this.count++
+      }
+    }
   }
-}
 </script>
 
-<style>
+<template>
+  <div class="main">
+    <Timer v-for="n in count" :key="n" />
+    <AddButton :addTimer="addTimer"/>
+  </div>
+
+</template>
+
+<style lang="scss">
+  @import "./scss/style.scss";
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  position: relative;
+  display: flex;
+  margin: 0 auto;
 }
 </style>

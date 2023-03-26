@@ -1,4 +1,16 @@
+@import "var";
 
-.container {
-  background-color: #42b983;
+.btn-add {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 225px;
+  height: 120px;
+  border: none;
+  background: $block-color;
+}
+
+.plus {
+  fill: $item-color;
 }

@@ -1,11 +1,27 @@
-$black-bkg: #222222;
-$black: #000000;
-$white-bkg: #ffffff;
-$light-pink: #F1E4E6;
-$light-gray: #9F9F9F;
-$dark-pink: #F16D7F;
-$sales-bkg-color: #4F4745;
+@import "var";
+@import "mixins";
 
-$desktop-width: 1600px;
-$tablet-width: 768px;
-$mobile-width: 375px;
+.main {
+  display: grid;
+  justify-content: center;
+  width: 1024px;
+  min-height: 100vh;
+  grid-template-columns: 225px 225px 225px;
+  grid-template-rows: 120px;
+  column-gap: 50px;
+  row-gap: 45px;
+  padding: 72px 0;
+  margin: 0 auto;
+  background: $app-bkg;
+  box-sizing: border-box;
+
+  @include tablet {
+    width: 768px;
+    grid-template-columns: 225px 225px;
+  }
+
+  @include mobile {
+    width: 320px;
+    grid-template-columns: 225px;
+  }
+}

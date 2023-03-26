@@ -1,6 +1,41 @@
+@import "var";
+@import "mixins";
 
-.btn-add {
-  width: 300px;
-  height: 300px;
-  background-color: red;
+.timer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 225px;
+  height: 120px;
+  background: $block-color;
+
+  &__time {
+    margin-top: 20px;
+    font-family: 'Gotham Pro', sans-serif;
+    @include font(22px, 21px, 400);
+    text-align: center;
+    color: $item-color;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    width: 85px;
+    margin-top: 40px;
+  }
+
+  &__item {
+    fill: $item-color;
+  }
+}
+
+hr {
+  position: absolute;
+  height: 1px;
+  width: 225px;
+  top: 60px;
+  margin: 0;
+  background: $item-color;
+  border: none;
 }
